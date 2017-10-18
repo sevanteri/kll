@@ -516,7 +516,7 @@ class PreprocessorStage(Stage):
             ('Operator', (r'=>|<=|i:\+|i:-|i::|i:|:\+|:-|::|:|=', )),
             ('USBCode', (r'U(("[^"]+")|(0x[0-9a-fA-F]+)|([0-9]+))', )),
             ('NumberBase10', (r'(([1-9][0-9]*))', )),
-            ('Number', (r'-?(0x[0-9a-fA-F]+)|(0|([1-9][0-9]*))', )),
+            ('Number', (r'-?((0x[0-9a-fA-F]+)|(0|([1-9][0-9]*)))', )),
             ('Name', (r'[A-Za-z_][A-Za-z_0-9]*', )),
             ('Misc', (r'.', )),  # Everything else
         ]
@@ -1121,7 +1121,7 @@ class OperationSpecificsStage(Stage):
             ('Operator', (r':', )),
             ('Comma', (r',', )),
             ('Name', (r'[A-Za-z_][A-Za-z_0-9]*', )),
-            ('Number', (r'-?(0x[0-9a-fA-F]+)|(0|([1-9][0-9]*))', )),
+            ('Number', (r'-?((0x[0-9a-fA-F]+)|(0|([1-9][0-9]*)))', )),
         ]
 
         # Tokenize, expression stores the result, status is returned
@@ -1149,7 +1149,7 @@ class OperationSpecificsStage(Stage):
 
             ('Comma', (r',', )),
             ('Dash', (r'-', )),
-            ('Number', (r'-?(0x[0-9a-fA-F]+)|(0|([1-9][0-9]*))', )),
+            ('Number', (r'-?((0x[0-9a-fA-F]+)|(0|([1-9][0-9]*)))', )),
             ('Name', (r'[A-Za-z_][A-Za-z_0-9]*', )),
         ]
 
@@ -1179,7 +1179,7 @@ class OperationSpecificsStage(Stage):
             ('Comma', (r',', )),
             ('Parenthesis', (r'\(|\)', )),
             ('Percent', (r'-?(0|([1-9][0-9]*))%', )),
-            ('Number', (r'-?(0x[0-9a-fA-F]+)|(0|([1-9][0-9]*))', )),
+            ('Number', (r'-?((0x[0-9a-fA-F]+)|(0|([1-9][0-9]*)))', )),
             ('Dash', (r'-', )),
             ('Plus', (r'\+', )),
             ('Name', (r'[A-Za-z_][A-Za-z_0-9]*', )),
@@ -1198,7 +1198,7 @@ class OperationSpecificsStage(Stage):
         lspec = [
             ('Space', (r'[ \t]+', )),
 
-            ('Number', (r'-?(0x[0-9a-fA-F]+)|(0|([1-9][0-9]*))', )),
+            ('Number', (r'-?((0x[0-9a-fA-F]+)|(0|([1-9][0-9]*)))', )),
             ('Name', (r'[A-Za-z_][A-Za-z_0-9]*', )),
             ('CodeBegin', (r'\[', )),
             ('CodeEnd', (r'\]', )),
@@ -1209,7 +1209,7 @@ class OperationSpecificsStage(Stage):
 
             ('String', (r'"[^"]*"', )),
             ('SequenceString', (r"'[^']*'", )),
-            ('Number', (r'-?(0x[0-9a-fA-F]+)|(0|([1-9][0-9]*))', )),
+            ('Number', (r'-?((0x[0-9a-fA-F]+)|(0|([1-9][0-9]*)))', )),
             ('Name', (r'[A-Za-z_][A-Za-z_0-9]*', )),
             ('VariableContents', (r'''[^"' ;:=>()]+''', )),
         ]
@@ -1264,7 +1264,7 @@ class OperationSpecificsStage(Stage):
             ('Plus', (r'\+', )),
             ('Parenthesis', (r'\(|\)', )),
             ('Timing', (r'[0-9]+(.[0-9]+)?((s)|(ms)|(us)|(ns))', )),
-            ('Number', (r'-?(0x[0-9a-fA-F]+)|(0|([1-9][0-9]*))', )),
+            ('Number', (r'-?((0x[0-9a-fA-F]+)|(0|([1-9][0-9]*)))', )),
             ('Name', (r'[A-Za-z_][A-Za-z_0-9]*', )),
         ]
 
@@ -1299,7 +1299,7 @@ class OperationSpecificsStage(Stage):
             ('Plus', (r'\+', )),
             ('Parenthesis', (r'\(|\)', )),
             ('Timing', (r'[0-9]+(.[0-9]+)?((s)|(ms)|(us)|(ns))', )),
-            ('Number', (r'-?(0x[0-9a-fA-F]+)|(0|([1-9][0-9]*))', )),
+            ('Number', (r'-?((0x[0-9a-fA-F]+)|(0|([1-9][0-9]*)))', )),
             ('Name', (r'[A-Za-z_][A-Za-z_0-9]*', )),
         ]
 
