@@ -1295,11 +1295,11 @@ class OperationSpecificsStage(Stage):
 
             ('Operator', (r':', )),
             ('Comma', (r',', )),
+            ('Number', (r'-?((0x[0-9a-fA-F]+)|(0|([1-9][0-9]*)))', )),
             ('Dash', (r'-', )),
             ('Plus', (r'\+', )),
             ('Parenthesis', (r'\(|\)', )),
             ('Timing', (r'[0-9]+(.[0-9]+)?((s)|(ms)|(us)|(ns))', )),
-            ('Number', (r'-?((0x[0-9a-fA-F]+)|(0|([1-9][0-9]*)))', )),
             ('Name', (r'[A-Za-z_][A-Za-z_0-9]*', )),
         ]
 
